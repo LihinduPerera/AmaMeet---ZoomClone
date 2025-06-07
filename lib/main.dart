@@ -1,3 +1,6 @@
+import 'package:ama_meet/controllers/auth_service.dart';
+import 'package:ama_meet/pages/login_page.dart';
+import 'package:ama_meet/pages/page_selection.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +23,37 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Poppins',
       ),
-      home: const Scaffold()
+      routes: {
+        '/login': (context) => const LoginPage(),
+        '/pageSelection': (context) => const PageSelection(),
+      },
+      home: StreamBuilder(
+        stream: AuthService().authChanges,
+        builder: (context, snapshot) {
+          if(snapshot.connectionState == ConnectionState.waiting) {
+            return const Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
+          }
+
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if(snapshot.hasData) {
+              Navigator.pushReplacementNamed(context, '/pageSelection');
+            } else {
+              Navigator.pushReplacementNamed(context, '/login');
+            }
+          });
+
+          // Reutrn CircularProgressIndicator while navigating
+          return const Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        },
+      )
     );
   }
 }
