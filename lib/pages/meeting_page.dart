@@ -1,3 +1,4 @@
+import 'package:ama_meet/controllers/jitsi_meet_controller.dart';
 import 'package:ama_meet/widgets/home_btn_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -6,6 +7,8 @@ class Meetingpage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final JitsiMeetController _jmc = JitsiMeetController();
+
     return Scaffold(
       backgroundColor: const Color(0xFFeeedf2),
 
@@ -24,7 +27,13 @@ class Meetingpage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               HomeBtnWidget(
-                onPressedFunction: () {},
+                onPressedFunction: () {
+                  _jmc.joinMeeting(
+                    '_amaMeetnewMeetingRoom',
+                    'User Name',
+                    'user@example.com',
+                  );
+                },
                 btnText: 'New Meeting',
                 btnIcon: Icons.videocam,
                 height: 60,
