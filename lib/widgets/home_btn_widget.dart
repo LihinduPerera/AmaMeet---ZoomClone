@@ -5,10 +5,14 @@ class HomeBtnWidget extends StatelessWidget {
   final VoidCallback? onPressedFunction;
   final IconData? btnIcon;
   final String btnText;
+  final double height;
+  final double width;
   const HomeBtnWidget({super.key,
     required this.onPressedFunction,
     required this.btnIcon,
-    required this.btnText});
+    required this.btnText,
+    required this.height,
+    required this.width,});
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +21,8 @@ class HomeBtnWidget extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 60,
-            height: 60,
+            width: width,
+            height: height,
             decoration: BoxDecoration(
               color: buttonColor,
               borderRadius: BorderRadius.circular(16),

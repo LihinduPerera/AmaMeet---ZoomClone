@@ -1,4 +1,5 @@
-import 'package:ama_meet/pages/MeetingPage.dart';
+import 'package:ama_meet/pages/meeting_page.dart';
+import 'package:ama_meet/pages/note_page.dart';
 import 'package:ama_meet/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
@@ -15,7 +16,7 @@ class _PageSelectionState extends State<PageSelection> {
 
   final List<Widget> pages = [
     const Meetingpage(),
-    Center(child:Text("Notes")),
+    const NotePage(),
     Center(child:Text("Account"))
   ];
 
