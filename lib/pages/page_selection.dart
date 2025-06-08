@@ -1,3 +1,4 @@
+import 'package:ama_meet/pages/account_page.dart';
 import 'package:ama_meet/pages/meeting_page.dart';
 import 'package:ama_meet/pages/note_page.dart';
 import 'package:ama_meet/utils/colors.dart';
@@ -17,7 +18,7 @@ class _PageSelectionState extends State<PageSelection> {
   final List<Widget> pages = [
     const Meetingpage(),
     const NotePage(),
-    Center(child:Text("Account"))
+    const AccountPage()
   ];
 
   @override

@@ -1,4 +1,3 @@
-import 'package:ama_meet/widgets/home_btn_widget.dart';
 import 'package:flutter/material.dart';
 
 class NotePage extends StatefulWidget {
@@ -27,15 +26,8 @@ class _NotePageState extends State<NotePage> {
             height: 10,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              HomeBtnWidget(
-                onPressedFunction: () {},
-                btnText: 'Add notes',
-                btnIcon: Icons.post_add,
-                height: 60,
-                width: 200,
-              ),
+              
             ],
           )
         ],

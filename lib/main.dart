@@ -1,6 +1,7 @@
 import 'package:ama_meet/controllers/auth_service.dart';
 import 'package:ama_meet/pages/login_page.dart';
 import 'package:ama_meet/pages/page_selection.dart';
+import 'package:ama_meet/utils/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Ama Meet',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: buttonColor),
         useMaterial3: true,
         fontFamily: 'Poppins',
       ),

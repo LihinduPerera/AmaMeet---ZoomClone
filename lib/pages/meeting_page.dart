@@ -39,7 +39,7 @@ class Meetingpage extends StatelessWidget {
                 width: 60,
               ),
               HomeBtnWidget(
-                onPressedFunction: (() {}),
+                onPressedFunction: () {},
                 btnText: 'Shedule',
                 btnIcon: Icons.calendar_today,
                 height: 60,
