@@ -41,6 +41,7 @@ class AuthService {
       }
     } on FirebaseAuthException catch (e) {
       showSnackBar(context, e.message!);
+      print(e.message );
       result = false;
     }
     

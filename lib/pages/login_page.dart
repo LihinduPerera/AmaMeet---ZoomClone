@@ -55,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                               bool result = await _authService.signInWithGoogle(context);
 
                               if (result) {
-                                Navigator.restorablePushNamedAndRemoveUntil(context, '/home', (route)=> false);
+                                Navigator.restorablePushNamedAndRemoveUntil(context, '/pageSelection', (route)=> false);
                               }
                             },
                             child: Container(

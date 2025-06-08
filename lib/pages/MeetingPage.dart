@@ -1,0 +1,59 @@
+import 'package:ama_meet/widgets/home_btn_widget.dart';
+import 'package:flutter/material.dart';
+
+class Meetingpage extends StatelessWidget {
+  const Meetingpage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFeeedf2),
+
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFeeedf2),
+        elevation: 0,
+        title: const Text("Join to the Class"),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              HomeBtnWidget(
+                onPressedFunction: () {},
+                btnText: 'New Meeting',
+                btnIcon: Icons.videocam,
+              ),
+              HomeBtnWidget(
+                // onPressedFunction: () => joinMeeting(context) ,
+                onPressedFunction: () {},
+                btnText: 'Join Meeting',
+                btnIcon: Icons.add_box_rounded,
+              ),
+              HomeBtnWidget(
+                onPressedFunction: (() {}),
+                btnText: 'Shedule',
+                btnIcon: Icons.calendar_today,
+              ),
+            ],
+          ),
+          const Expanded(
+            child: Center(
+              child: Text(
+                "Join to the class",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
